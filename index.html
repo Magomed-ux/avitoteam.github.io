@@ -1,188 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Обучение заработку на Авито</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оставьте заявку</title>
   <style>
     body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #222;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    header, footer, section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header {
-      background: #1d1d1d;
-      color: white;
-    }
-    .btn {
-      background: #ff9900;
-      color: white;
-      padding: 15px 30px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    .popup-form {
-      display: none;
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
+    .form-container {
       background: white;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      z-index: 9999;
-      width: 90%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       max-width: 400px;
+      width: 100%;
     }
-    .popup-form input {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    input {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
+      margin: 10px 0;
       border: 1px solid #ccc;
+      border-radius: 8px;
     }
-    .popup-form button {
-      background: #ff9900;
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00aaff;
       color: white;
       border: none;
-      padding: 12px;
-      width: 100%;
       border-radius: 8px;
-      font-size: 16px;
-    }
-    .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      background: none;
-      border: none;
-      font-size: 20px;
       cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
-    .features, .reviews {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .feature, .review {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      max-width: 300px;
-    }
-    .footer-links a {
-      margin: 0 10px;
-      color: #ff9900;
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      .features, .reviews {
-        flex-direction: column;
-        align-items: center;
-      }
+    button:hover {
+      background-color: #008ecc;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Обучение заработку на Авито</h1>
-  <p>Научу тебя зарабатывать от 50 000 ₽ в месяц с нуля, без вложений</p>
-  <a href="#" class="btn" onclick="document.getElementById('form-popup').style.display='block'; return false;">Записаться</a>
-</header>
-
-<section>
-  <h2 class="section-title">Обо мне</h2>
-  <p>Меня зовут Магомед. Мне 17 лет, и уже более 3 лет я работаю с Авито и зарабатываю стабильно. Теперь я делюсь этим с другими.</p>
-</section>
-
-<section>
-  <h2 class="section-title">Что ты получишь</h2>
-  <div class="features">
-    <div class="feature">📦 Готовую схему заработка</div>
-    <div class="feature">🧠 Пошаговые инструкции</div>
-    <div class="feature">📞 Поддержка лично от меня</div>
-    <div class="feature">📈 Примеры, кейсы, шаблоны</div>
+  <div class="form-container">
+    <h2>Оставьте заявку</h2>
+    <form action="https://y7jq9vjj.epizy.com/send.php" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="Ваш телефон" required>
+      <button type="submit">Отправить</button>
+    </form>
   </div>
-</section>
-
-<section>
-  <h2 class="section-title">Отзывы учеников</h2>
-  <div class="reviews">
-    <div class="review"><strong>Адам:</strong><br>«Прошёл обучение за 3 дня, первый заказ — уже на 2-й неделе!»</div>
-    <div class="review"><strong>Ислам:</strong><br>«Спасибо Магомеду! Всё по делу, без воды. Уже в плюсах.»</div>
-    <div class="review"><strong>Зелимхан:</strong><br>«Я школьник, заработал 7 000₽ за первые 10 дней!»</div>
-  </div>
-</section>
-
-<footer>
-  <p>Связаться со мной:</p>
-  <div class="footer-links">
-    <a href="https://t.me/avitoteam_helper_bot" target="_blank">Telegram</a>
-    <a href="https://wa.me/7XXXXXXXXXX" target="_blank">WhatsApp</a>
-  </div>
-</footer>
-
-<div id="form-popup" class="popup-form">
-  <button class="close-btn" onclick="document.getElementById('form-popup').style.display='none'">&times;</button>
-  <h3>Записаться на обучение</h3>
-  <input type="text" id="name" placeholder="Ваше имя" required>
-  <input type="tel" id="phone" placeholder="Номер телефона" required>
-  <input type="text" id="freeTime" placeholder="У тебя есть свободное время?" required>
-  <input type="text" id="activity" placeholder="Чем занимаешься?" required>
-  <button onclick="sendTelegramMessage()">Отправить</button>
-</div>
-
-<script>
-  function sendTelegramMessage() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const freeTime = document.getElementById('freeTime').value.trim();
-    const activity = document.getElementById('activity').value.trim();
-
-    if (!name || !phone || !freeTime || !activity) {
-      alert('Пожалуйста, заполните все поля.');
-      return;
-    }
-
-    const message = `📬 Новая заявка с сайта:%0A👤 Имя: ${name}%0A📞 Телефон: ${phone}%0A🕒 Свободное время: ${freeTime}%0A💼 Чем занимается: ${activity}`;
-    const token = '8115608858:AAFmCassangZLRa_FDvtfDJdeXzAtA_h4Vo';
-    const chatId = '8115608858';
-
-    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data.ok) {
-          alert('Заявка отправлена! Я скоро с тобой свяжусь.');
-          document.getElementById('form-popup').style.display = 'none';
-          document.getElementById('name').value = '';
-          document.getElementById('phone').value = '';
-          document.getElementById('freeTime').value = '';
-          document.getElementById('activity').value = '';
-        } else {
-          alert('Ошибка при отправке: ' + data.description);
-        }
-      })
-      .catch(error => {
-        alert('Ошибка соединения. Попробуйте позже.');
-        console.error('Ошибка:', error);
-      });
-  }
-</script>
 
 </body>
 </html>
