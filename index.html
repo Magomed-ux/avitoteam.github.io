@@ -163,25 +163,24 @@
     const token = '8115608858:AAFmCassangZLRa_FDvtfDJdeXzAtA_h4Vo';
     const chatId = '8115608858';
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`, {
-      method: 'GET'
-    })
-    .then(response => {
-      if (response.ok) {
-        alert('Заявка отправлена! Я скоро с тобой свяжусь.');
-        document.getElementById('form-popup').style.display = 'none';
-        document.getElementById('name').value = '';
-        document.getElementById('phone').value = '';
-        document.getElementById('freeTime').value = '';
-        document.getElementById('activity').value = '';
-      } else {
-        alert('Ошибка при отправке. Попробуйте позже.');
-      }
-    })
-    .catch(error => {
-      alert('Ошибка соединения. Попробуйте позже.');
-      console.error(error);
-    });
+    fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Заявка отправлена! Я скоро с тобой свяжусь.');
+          document.getElementById('form-popup').style.display = 'none';
+          document.getElementById('name').value = '';
+          document.getElementById('phone').value = '';
+          document.getElementById('freeTime').value = '';
+          document.getElementById('activity').value = '';
+        } else {
+          alert('Ошибка при отправке: ' + data.description);
+        }
+      })
+      .catch(error => {
+        alert('Ошибка соединения. Попробуйте позже.');
+        console.error('Ошибка:', error);
+      });
   }
 </script>
 
