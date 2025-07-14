@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Запись на обучение — Магомед & Ахмед</title>
+<title>Предзапись на обучение — Магомед & Ахмед</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
@@ -21,25 +21,52 @@
 
   .form-container {
     background: #1e1e2f;
-    padding: 40px 30px;
+    padding: 40px 30px 30px;
     border-radius: 20px;
     box-shadow:
       0 8px 24px rgba(102, 17, 203, 0.4),
       0 0 40px rgba(37, 117, 252, 0.6);
-    width: 360px;
+    width: 400px;
     max-width: 100%;
+    text-align: center;
   }
 
-  .form-container h1 {
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 4px solid #6a11cb;
+  }
+
+  h1 {
     margin: 0 0 24px;
     font-weight: 600;
     font-size: 28px;
-    text-align: center;
+  }
+
+  .info-text {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 18px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ddd;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .info-text strong {
+    color: #ffd966;
   }
 
   form {
     display: flex;
     flex-direction: column;
+    text-align: left;
   }
 
   label {
@@ -90,21 +117,6 @@
     background: linear-gradient(45deg, #2575fc, #6a11cb);
   }
 
-  /* Анимация появления формы */
-  .form-container {
-    animation: fadeInUp 0.7s ease forwards;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Подпись снизу */
   .footer-text {
     margin-top: 18px;
     font-size: 14px;
@@ -112,12 +124,20 @@
     color: #aaa;
     font-weight: 400;
   }
-
 </style>
 </head>
 <body>
   <div class="form-container">
+    <img class="avatar" src="https://i.postimg.cc/gk9GLT9T/BE5-DD8-D8-51-D3-4-BA0-9-CC5-1876823-DE1-ED.png" alt="Магомед Ахмед" />
     <h1>Магомед & Ахмед</h1>
+    
+    <div class="info-text">
+      <p><strong>ПРЕДЗАПИСЬ НА «ОБУЧЕНИЕ ПО ЗАРАБОТКУ НА АВИТО»</strong></p>
+      <p>ЗАПОЛНЕНИЕ АНКЕТЫ НИ К ЧЕМУ ВАС НЕ ОБЯЗЫВАЕТ</p>
+      <p>Но если вы её заполните, то <strong>первые узнаете об открытии продаж</strong> и тогда точно ничего не пропустите, так как возможность вступить на обучение может закрыться как за пару дней — так и за пару часов, связано это с огромным количеством желающих и ограниченным количеством мест.</p>
+      <p><strong>ЗАПОЛНИТЕ АНКЕТУ И ПРЕДВАРИТЕЛЬНО ЗАЙМИТЕ СВОЕ МЕСТО</strong></p>
+    </div>
+
     <form id="signup-form">
       <label>
         <input type="text" id="name" placeholder="Ваше имя" required />
