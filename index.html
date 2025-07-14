@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Запись на обучение</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 350px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e86de;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b4f72;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Запись на обучение</h1>
+  <p>С Магомедом и Ахмедом — оставьте имя и номер, и мы вам напишем</p>
+
+  <form id="zapis-form">
+    <input type="text" id="name" placeholder="Ваше имя" required /><br />
+    <input type="tel" id="phone" placeholder="Ваш WhatsApp номер" required /><br />
+    <button type="submit">Отправить</button>
+  </form>
+
+  <script>
+    const botToken = '8115608858:AAFmCassangZLRa_FDvtfDJdeXzAtA_h4Vo'; // ← твой токен
+    const chatId = '5348861014'; // ← твой chat ID
+
+    document.getElementById('zapis-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const message = `📩 Новая заявка:\n👤 Имя: ${name}\n📱 Телефон: ${phone}`;
+
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('✅ Спасибо! Вы успешно записались.');
+          document.getElementById('zapis-form').reset();
+        } else {
+          alert('❌ Ошибка при отправке. Проверьте подключение.');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
